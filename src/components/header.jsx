@@ -4,7 +4,7 @@ export default function Header() {
         <div className={'header'}>
             <h1 className={'title'}>MIQUIERA</h1>
 
-            <div className={'header-nav'}>
+            <nav className={'nav'}>
                 <a  href={''}>Home</a>
                 <a  href={''}>Shop</a>
 
@@ -17,7 +17,7 @@ export default function Header() {
                     1
                 </div>
 
-            </div>
+            </nav>
 
         </div>
     )
