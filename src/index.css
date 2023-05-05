@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
 
 :root {
-    --jade: #2A606B
+    --jade: #2A606B;
+    --red: #FF1F1F
 }
 
 * {
@@ -15,7 +16,7 @@
     height: 100vh;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 5fr;
     grid-template-rows: 1fr 6fr 2rem;
 }
 
@@ -30,6 +31,7 @@
 }
 
 .title {
+    color: var(--jade);
     font-size: 3rem;
 }
 
@@ -48,10 +50,13 @@ nav {
     display: flex;
     gap: 5rem;
 }
-
 nav a {
     color: black;
+}
+
+a {
     text-decoration: none;
+    font-size: 1rem;
 }
 
 nav label {
@@ -145,6 +150,32 @@ nav input {
 
     padding: 0.9rem 1rem;
     width: 12rem;
+}
+
+.home-content {
+    text-align: right;
+    margin: 10% 10% 5%;
+    justify-self: end;
+}
+
+.home-content h2 {
+    font-size: 2.5rem;
+}
+
+h2 > span {
+    color: var(--red);
+}
+
+.home-content > p {
+    line-height: 30px;
+    margin: 2.5rem 0;
+    max-width: 50rem;
+}
+
+.home-content > a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: var(--red);
 }
 
 footer {
