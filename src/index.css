@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
 
+:root {
+    --jade: #2A606B
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,9 +13,10 @@
 
 .body {
     height: 100vh;
+    position: relative;
 }
 
-.header{
+.header {
     border-bottom: 1px solid #DFDFDF;
     display: flex;
     justify-content: space-between;
@@ -41,6 +46,76 @@ nav input {
     border: none;
     border-bottom: 1px solid black;
     width: 0;
+}
+
+.cart-bg {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 25%);
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart {
+    background-color: white;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-head {
+    border-bottom: 1px solid #DFDFDF;
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.cart-products {
+    padding: 2.5rem;
+}
+
+.cart-summary {
+    padding: 2.5rem;
+}
+
+.cart-units, .cart-total{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.cart-units h4, .cart-total h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.cart-units span, .cart-total span {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gr-btn {
+    color: white;
+    background-color: var(--jade);
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+
+    padding: 0.9rem 1rem;
+    width: 12rem;
 }
 
 footer {
