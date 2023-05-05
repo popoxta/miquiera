@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.header{
+    border-bottom: 1px solid #DFDFDF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 5rem;
+}
+
+.header .title {
+    font-size: 2.5rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 5rem;
+}
+
+.header-nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.header-nav label {
+    margin-right: 0.5rem;
+}
+
+.header-nav input {
+    border: none;
+    border-bottom: 1px solid black;
+}
