@@ -15,8 +15,8 @@ export default function Layout() {
                 <Header atHome={atHome}/>
                 <Outlet/>
                 <Cart/>
-                <Footer/>
             </div>
+            <Footer/>
         </div>
     )
 }

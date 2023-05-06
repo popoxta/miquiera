@@ -1,26 +1,26 @@
-import {products} from "../products.js";
+import {products as productData} from "../products.js";
 
-export default function Shop(){
-    const shopProducts = products
-    const tesProd = products[0]
+export default function Shop() {
+    const availableProducts = productData
 
-    const product = (
-        <div className={'product-tile'}>
+    const products = availableProducts.map(prod =>
+        <div className={'product-tile'} key={prod.id}>
 
-            <div className={'tile-img-wrapper'}>
-                <img src={tesProd.image} alt={tesProd.name} className={'tile-img'}/>
-            </div>
 
-            <h2>{tesProd.name}</h2>
-            <p>${tesProd.price} + GST</p>
+                <img src={prod.image} alt={prod.name} className={'tile-img'}/>
+            <h2>{prod.name}</h2>
+            <hr/>
+            <p>${prod.price} + GST</p>
 
             <button className={'gr-btn'}>add to cart</button>
         </div>
     )
 
+
+
     return (
         <div className={'shop-wrapper'}>
-            {product}
+            {products}
         </div>
     )
 }

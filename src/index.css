@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
 
 :root {
-    --jade: #2A606B;
-    --red: #FF1F1F
+    --jade: #59a4c2;
+    --red: #ff5861;
+    --gray: #DFDFDF;
 }
 
 * {
@@ -23,7 +24,7 @@
 }
 
 .header {
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid var(--gray);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +115,55 @@ h2 > span {
     color: var(--red);
 }
 
-footer {
+.shop-wrapper {
+    padding: 2.5rem 5rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.product-tile {
+    width: 18rem;
+    height: 25rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.product-tile > hr {
+    width: 100%;
+    color: var(--gray);
+}
+
+.product-tile > h2 {
+    font-family: 'Roboto', Inter, sans-serif;
+    font-weight: normal;
+}
+
+.product-tile > p {
+    color: var(--red);
+    font-family: 'Roboto', Inter, sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.product-tile > .gr-btn {
+    width: 90%;
+}
+
+.tile-img {
+    border-radius: 15px;
+    min-width: 16rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
+footer{
     position: absolute;
     text-align: center;
     width: 100%;
@@ -142,7 +191,7 @@ footer {
 }
 
 .cart-head {
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid black;
     text-align: center;
     padding: 2.5rem 2rem;
 }
@@ -155,13 +204,13 @@ footer {
     padding: 2.5rem;
 }
 
-.cart-units, .cart-total{
+.cart-units, .cart-total {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem 0;
 }
 
-.cart-units h4, .cart-total h4{
+.cart-units h4, .cart-total h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -188,6 +237,6 @@ footer {
     font-size: 0.9rem;
     letter-spacing: 1px;
 
-    padding: 0.9rem 1rem;
+    padding: 0.5rem 1rem;
     width: 12rem;
 }
