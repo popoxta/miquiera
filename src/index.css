@@ -12,12 +12,14 @@
     font-family: 'Inria Sans', sans-serif;
 }
 
-.body {
-    height: 100vh;
+.site-wrapper {
+    background-image: url("./assets/Vector 2.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
     position: relative;
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-    grid-template-rows: 1fr 6fr 2rem;
+    min-height: 100vh;
+    display: flex;
 }
 
 .header {
@@ -25,36 +27,51 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem 5rem;
+    padding: 0 5rem;
     gap: 5rem;
-    grid-column: span 2;
+    height: 9rem;
 }
+
 
 .title {
     color: var(--jade);
     font-size: 3rem;
 }
 
-.side-img .title {
-    color: white;
-    margin-top: 2.5rem;
-    text-align: center;
-}
-
 .no-title {
     justify-content: flex-end;
-    grid-column: 2;
+}
+
+.side-img {
+    background-image: url("./assets/katsiaryna-endruszkiewicz-BteCp6aq4GI-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 80px 80px 0;
+    background-color: rgba(0, 0, 0, 20%);
+
+    min-height: 100%;
+    min-width: max(25%, 20rem);
+}
+
+.side-img .title {
+    color: white;
+    padding: 2.5rem 0 0 5rem;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.content {
+    flex-grow: 1;
+    position: relative;
 }
 
 nav {
     display: flex;
     gap: 5rem;
 }
-nav a {
-    color: black;
-}
 
 a {
+    color: black;
     text-decoration: none;
     font-size: 1rem;
 }
@@ -69,16 +86,39 @@ nav input {
     width: 0;
 }
 
-.side-img {
-    background-image: url("./assets/katsiaryna-endruszkiewicz-BteCp6aq4GI-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 80px 80px 0;
-    background-color: rgba(0, 0, 0, 20%);
+.home-content {
+    text-align: right;
+    margin: 10% 10% 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2.5rem;
+}
 
-    height: 100%;
-    grid-row: span 3;
-    min-width: 20rem;
+.home-content h2 {
+    font-size: 2.5rem;
+}
+
+h2 > span {
+    color: var(--red);
+}
+
+.home-content > p {
+    line-height: 30px;
+    max-width: 70%;
+}
+
+.home-content > a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: var(--red);
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 1rem;
 }
 
 .cart-bg {
@@ -150,37 +190,4 @@ nav input {
 
     padding: 0.9rem 1rem;
     width: 12rem;
-}
-
-.home-content {
-    text-align: right;
-    margin: 10% 10% 5%;
-    justify-self: end;
-}
-
-.home-content h2 {
-    font-size: 2.5rem;
-}
-
-h2 > span {
-    color: var(--red);
-}
-
-.home-content > p {
-    line-height: 30px;
-    margin: 2.5rem 0;
-    max-width: 50rem;
-}
-
-.home-content > a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: var(--red);
-}
-
-footer {
-    grid-column: 2;
-    grid-row: 3;
-    text-align: center;
-    width: 100%;
 }

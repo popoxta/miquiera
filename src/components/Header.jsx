@@ -1,13 +1,14 @@
-export default function Header({ title }) {
+import {Link} from "react-router-dom";
 
-    console.log(title)
+export default function Header({atHome}) {
+
     return (
         <>
-            <div className={title ? 'header' : 'header no-title'}>
-                {title && <h1 className={'title'}>MIQUIERA</h1>}
+            <div className={atHome ? 'header no-title' : 'header' }>
+                {!atHome && <h1 className={'title'}>MIQUIERA</h1>}
                 <nav className={'nav'}>
-                    <a href={''}>Home</a>
-                    <a href={''}>Shop</a>
+                    <Link to={'/'}>Home</Link>
+                    <Link to={'shop'}>Shop</Link>
 
                     <div className={'nav-search'}>
                         <label htmlFor={'query'}>Search</label>
