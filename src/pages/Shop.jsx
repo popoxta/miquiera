@@ -1,26 +1,25 @@
-import {products as productData} from "../products.js";
+import {products} from "../products.js";
+import {Link} from "react-router-dom";
 
 export default function Shop() {
-    const availableProducts = productData
+    const allProducts = products.map(prod =>
 
-    const products = availableProducts.map(prod =>
-        <div className={'product-tile'} key={prod.id}>
-
+        <Link key={prod.id} to={`${prod.id}`}>
+            <div className={'product-tile'}>
 
                 <img src={prod.image} alt={prod.name} className={'tile-img'}/>
-            <h2>{prod.name}</h2>
-            <hr/>
-            <p>${prod.price} + GST</p>
+                <h2>{prod.name}</h2>
+                <hr/>
+                <p>${prod.price} + GST</p>
+                <button className={'gr-btn'}>add to cart</button>
 
-            <button className={'gr-btn'}>add to cart</button>
-        </div>
+            </div>
+        </Link>
     )
-
-
 
     return (
         <div className={'shop-wrapper'}>
-            {products}
+            {allProducts}
         </div>
     )
 }

@@ -33,7 +33,6 @@
     height: 9rem;
 }
 
-
 .title {
     color: var(--jade);
     font-size: 3rem;
@@ -116,7 +115,7 @@ h2 > span {
 }
 
 .shop-wrapper {
-    padding: 2.5rem 5rem 5rem;
+    margin: 2.5% 10% 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -153,14 +152,42 @@ h2 > span {
 }
 
 .product-tile > .gr-btn {
-    width: 90%;
+    width: 100%;
 }
 
 .tile-img {
     border-radius: 15px;
-    min-width: 16rem;
+    min-width: 15rem;
     height: 15rem;
     object-fit: cover;
+}
+
+.product-wrapper {
+    margin: 3% 7.5% 5%;
+    display: flex;
+    gap: 5%;
+}
+
+.product-img {
+    border-radius: 15px;
+    flex-shrink: 1;
+    min-width: 35rem;
+    height: 35rem;
+    object-fit: cover;
+}
+
+.product-description {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 5%;
+    gap: 2rem;
+}
+
+.product-description > p {
+    line-height: 30px;
+    max-width: 70%;
 }
 
 footer{
