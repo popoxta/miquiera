@@ -126,25 +126,28 @@ h2 > span {
     width: 18rem;
     height: 25rem;
     padding: 1rem;
+}
 
+.product-tile > .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
+    margin-bottom: 0.7rem;
 }
 
-.product-tile > hr {
+.product-tile hr {
     width: 100%;
     color: var(--gray);
 }
 
-.product-tile > h2 {
+.product-tile h2 {
     font-family: 'Roboto', Inter, sans-serif;
     font-weight: normal;
 }
 
-.product-tile > p {
+.product-tile p {
     color: var(--red);
     font-family: 'Roboto', Inter, sans-serif;
     font-weight: bold;

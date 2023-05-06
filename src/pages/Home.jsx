@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export default function Home() {
     return (
 
@@ -18,7 +20,7 @@ export default function Home() {
                 lacinia
                 tortor. Nam fringilla ullamcorper semper.
             </p>
-            <a href={''}>shop now</a>
+            <Link to={'shop'}>shop now</Link>
         </div>
 
     )

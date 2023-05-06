@@ -5,7 +5,7 @@ export default function Header({atHome}) {
     return (
         <>
             <div className={atHome ? 'header no-title' : 'header' }>
-                {!atHome && <h1 className={'title'}>MIQUIERA</h1>}
+                {!atHome && <Link to={'/'}><h1 className={'title'}>MIQUIERA</h1></Link>}
                 <nav className={'nav'}>
                     <Link to={'/'}>Home</Link>
                     <Link to={'shop'}>Shop</Link>
