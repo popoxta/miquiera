@@ -11,9 +11,9 @@ export default function Product() {
 
             <div className={'product-description'}>
                 <h1>{product.name}</h1>
-                <h2>${product.price} + GST</h2>
+                <h3>${product.price} + GST</h3>
                 <p>{product.description}</p>
-                <h2>add to cart</h2>
+                <h3>add to cart</h3>
             </div>
         </div>
     )
