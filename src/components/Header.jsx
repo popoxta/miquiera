@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export default function Header({atHome}) {
 
@@ -7,8 +7,8 @@ export default function Header({atHome}) {
             <div className={atHome ? 'header no-title' : 'header' }>
                 {!atHome && <Link to={'/'}><h1 className={'title'}>MIQUIERA</h1></Link>}
                 <nav className={'nav'}>
-                    <Link to={'/'}>Home</Link>
-                    <Link to={'shop'}>Shop</Link>
+                    <NavLink to={'/'}>Home</NavLink>
+                    <NavLink to={'shop'}>Shop</NavLink>
 
                     <div className={'nav-search'}>
                         <label htmlFor={'query'}>Search</label>

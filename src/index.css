@@ -280,3 +280,8 @@ footer{
     padding: 0.5rem 1rem;
     width: 12rem;
 }
+
+.active {
+    color: var(--red);
+    font-weight: bold;
+}
