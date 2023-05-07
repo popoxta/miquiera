@@ -223,6 +223,7 @@ footer{
 
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
     /*display: none;*/
 }
 
@@ -232,6 +233,11 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: default;
+}
+
+.hidden {
+    display: none;
 }
 
 .cart-head {
@@ -259,6 +265,7 @@ footer{
     border-radius: 15px;
     width: 5rem;
     height: 5rem;
+    object-fit: cover;
 }
 
 .cart-summary {

@@ -1,22 +1,27 @@
 import {products} from "../products.js";
 import {addToCart, removeFromCart} from "../utils.js";
+import {useLocation} from "react-router-dom";
+import {useState} from "react";
 
-export default function Cart({cart, setCart}) {
+export default function Cart({cart, setCart, showCart, setShowCart}) {
 
     const cartProducts = cart.cart.sort((a, b) => a.id - b.id).map(item => {
 
         const productData = products.find(prod => prod.id === +item.id)
 
-        function handleIncrement(prod){
+        function handleIncrement(e, prod){
+            e.stopPropagation()
             addToCart(cart, setCart, prod,  1)
         }
 
-        function handleDecrement(prod){
+        function handleDecrement(e, prod){
+            e.stopPropagation()
             if (prod.amount <= 1) return
             addToCart(cart, setCart, prod, -1)
         }
 
-        function handleDelete(prod){
+        function handleDelete(e, prod){
+            e.stopPropagation()
             removeFromCart(cart, setCart, prod)
         }
 
@@ -27,12 +32,12 @@ export default function Cart({cart, setCart}) {
                     <h4>{productData.name}</h4>
                     <div className={'cart-quantity'}>
                         <p>quantity</p>
-                        <button onClick={()=> handleDecrement(item)}>-</button>
+                        <button onClick={e=> handleDecrement(e, item)}>-</button>
                         <p>{item.amount}</p>
-                        <button onClick={()=> handleIncrement(item)}>+</button>
+                        <button onClick={e=> handleIncrement(e, item)}>+</button>
                     </div>
                     <p><span>${item.amount * productData.price} + GST</span></p>
-                    <button onClick={()=> handleDelete(item)}>x</button>
+                    <button onClick={e=> handleDelete(e, item)}>x</button>
                 </div>
             </div>
         )
@@ -48,10 +53,14 @@ export default function Cart({cart, setCart}) {
         return acc + (item.amount * price)
     }, 0)
 
-    return (
-        <div className={'cart-bg'}>
+    function hideCart(){
+        setShowCart(false)
+    }
 
-            <div className={'cart'}>
+    return (
+        <div className={showCart ? 'cart-bg' : 'cart-bg hidden'} onClick={hideCart}>
+
+            <div className={'cart'} onClick={e => e.stopPropagation()}>
 
                 <div className={'cart-head'}>
                     <h1>SHOPPING CART</h1>

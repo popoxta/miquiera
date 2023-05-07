@@ -1,10 +1,14 @@
 import {Link, NavLink} from "react-router-dom";
 
-export default function Header({atHome, cart}) {
+export default function Header({atHome, cart, setShowCart}) {
 
     const totalCartAmount = cart.cart.reduce((acc, curr) => {
         return acc + curr.amount
     }, 0)
+
+    function showCart(){
+        setShowCart(true)
+    }
 
     return (
         <>
@@ -19,7 +23,7 @@ export default function Header({atHome, cart}) {
                         <input name={'query'} id={'query'}/>
                     </div>
 
-                    <div className={'nav-cart'}>
+                    <div className={'nav-cart'} onClick={showCart}>
                         {totalCartAmount}
                     </div>
 

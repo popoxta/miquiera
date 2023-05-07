@@ -7,6 +7,7 @@ import Product from "./pages/Product.jsx";
 const router = createBrowserRouter(createRoutesFromElements(
 
     <Route path={'/'} element={<Layout/>}>
+
         <Route index element={<Home/>}/>
         <Route path={'shop'}>
             <Route index element={<Shop/>}/>
