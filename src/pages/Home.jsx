@@ -19,7 +19,7 @@ export default function Home() {
                 lacinia
                 tortor. Nam fringilla ullamcorper semper.
             </p>
-            <Link to={'shop'}>shop now</Link>
+            <Link to={'shop'}><button className={'fake-btn'}>shop now</button></Link>
         </div>
     )
 }

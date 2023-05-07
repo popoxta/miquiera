@@ -34,12 +34,33 @@ export default function Cart() {
                     <h4>{productData.name}</h4>
                     <div className={'cart-quantity'}>
                         <p>quantity</p>
-                        <button onClick={e=> handleDecrement(e, item)}>-</button>
+
+                        <button className={'circle-btn'} id={'decrement-btn'}
+                                onClick={e=> handleDecrement(e, item)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                                <path d="M200 606v-60h560v60H200Z"/>
+                            </svg>
+                        </button>
+
                         <p>{item.amount}</p>
-                        <button onClick={e=> handleIncrement(e, item)}>+</button>
+
+                        <button className={'circle-btn'} id={'increment-btn'}
+                                onClick={e=> handleIncrement(e, item)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                                <path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z"/>
+                            </svg>
+                        </button>
+
                     </div>
                     <p><span>${item.amount * productData.price} + GST</span></p>
-                    <button onClick={e=> handleDelete(e, item)}>x</button>
+
+                    <button className={'circle-btn delete-btn'} id={'delete-btn'}
+                            onClick={e=> handleDelete(e, item)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                            <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/>
+                        </svg>
+                    </button>
+
                 </div>
             </div>
         )
@@ -61,17 +82,13 @@ export default function Cart() {
 
     return (
         <div className={showCart ? 'cart-bg' : 'cart-bg hidden'} onClick={hideCart}>
-
             <div className={'cart'} onClick={e => e.stopPropagation()}>
-
                 <div className={'cart-head'}>
                     <h1>SHOPPING CART</h1>
                 </div>
-
                 <div className={'cart-products'}>
                     {cartProducts}
                 </div>
-
                 <div className={'cart-summary'}>
                     <div className={'cart-units'}>
                         <h4>Units</h4>
@@ -82,17 +99,12 @@ export default function Cart() {
                         <h4>Total <span>(inc GST)</span></h4>
                         <h4>${(totalCost * 1.15).toFixed(2)}</h4>
                     </div>
-
                     <div className={'cart-buttons'}>
-
                         <button className={'gr-btn'}>continue shopping</button>
                         <button className={'gr-btn'}>checkout</button>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }

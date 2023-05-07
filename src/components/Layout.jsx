@@ -9,12 +9,11 @@ export default function Layout() {
 
     return (
         <div className={'site-wrapper'}>
+            <Cart/>
             {atHome && <Image/>}
-
             <div className={'content'}>
                 <Header atHome={atHome}/>
                 <Outlet/>
-                <Cart/>
             </div>
             <Footer/>
         </div>
