@@ -101,6 +101,7 @@ nav input {
     align-items: center;
     cursor: pointer;
 }
+
 .nav-cart svg {
     width: 1.5rem;
     height: 1rem;
@@ -145,7 +146,7 @@ h2 > span {
     transition: all 0.1s ease-in-out;
 }
 
-.fake-btn:hover{
+.fake-btn:hover {
     scale: 1.05;
 }
 
@@ -183,7 +184,7 @@ hr {
     font-size: 1.2rem;
 }
 
-.product-tile  p {
+.product-tile p {
     color: var(--red);
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
@@ -239,7 +240,7 @@ hr {
     max-width: 70%;
 }
 
-footer{
+footer {
     position: absolute;
     text-align: center;
     width: 100%;
