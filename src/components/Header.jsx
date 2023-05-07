@@ -1,6 +1,10 @@
 import {Link, NavLink} from "react-router-dom";
 
-export default function Header({atHome}) {
+export default function Header({atHome, cart}) {
+
+    const totalCartAmount = cart.cart.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
 
     return (
         <>
@@ -16,7 +20,7 @@ export default function Header({atHome}) {
                     </div>
 
                     <div className={'nav-cart'}>
-                        1
+                        {totalCartAmount}
                     </div>
 
                 </nav>

@@ -1,13 +1,15 @@
-import {useParams} from "react-router-dom";
+import {useOutletContext, useParams} from "react-router-dom";
 import {products} from "../products.js";
 
 export default function Product() {
     const params = useParams()
+    const {cart, setCart} = useOutletContext()
+
     const product = products.find(prod => prod.id === +params.id)
 
     function addToCart() {
-        const oldCart = JSON.parse(localStorage.getItem('cart')) ?? {cart: []}
-        
+        const oldCart = {...cart}
+
         const index = oldCart.cart.findIndex(item => item.id === product.id)
 
         const productInCart = index >= 0
@@ -21,9 +23,9 @@ export default function Product() {
                 productInCart
             ]
         }
-        console.log(newCart)
-        localStorage.setItem('cart', JSON.stringify(newCart))
+        setCart(newCart)
     }
+    console.log(cart)
 
     return (
         <div className={'product-wrapper'}>
