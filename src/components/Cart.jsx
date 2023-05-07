@@ -1,5 +1,5 @@
-import {products} from "../products.js";
-import {addToCart, removeFromCart} from "../utils.js";
+import {productById} from "../products.js";
+import {addToCart, removeFromCart, sumCartAmounts} from "../utils.js";
 import {CartContext} from "../context.jsx";
 import {useContext} from "react";
 
@@ -7,25 +7,24 @@ import {useContext} from "react";
 export default function Cart() {
     const {showCart, setShowCart, cart, setCart} = useContext(CartContext)
 
+    function handleIncrement(e, prod){
+        e.stopPropagation()
+        addToCart(cart, setCart, prod,  1)
+    }
+
+    function handleDecrement(e, prod){
+        e.stopPropagation()
+        if (prod.amount <= 1) return
+        addToCart(cart, setCart, prod, -1)
+    }
+
+    function handleDelete(e, prod){
+        e.stopPropagation()
+        removeFromCart(cart, setCart, prod)
+    }
+
     const cartProducts = cart.cart.sort((a, b) => a.id - b.id).map(item => {
-
-        const productData = products.find(prod => prod.id === +item.id)
-
-        function handleIncrement(e, prod){
-            e.stopPropagation()
-            addToCart(cart, setCart, prod,  1)
-        }
-
-        function handleDecrement(e, prod){
-            e.stopPropagation()
-            if (prod.amount <= 1) return
-            addToCart(cart, setCart, prod, -1)
-        }
-
-        function handleDelete(e, prod){
-            e.stopPropagation()
-            removeFromCart(cart, setCart, prod)
-        }
+        const productData = productById(item.id)
 
         return (
             <div key={productData.name} className={'cart-item'}>
@@ -66,13 +65,11 @@ export default function Cart() {
         )
     })
 
-    const totalItems = cart.cart.reduce((acc, curr) => {
-        return acc + curr.amount
-    }, 0)
+    const totalItems = sumCartAmounts(cart)
 
     // this is less performant (O(n^2)) however the dataset is minimal
     const totalCost = cart.cart.reduce((acc, item) => {
-        const price = products.find(prod => prod.id === +item.id).price
+        const price = productById(item.id).price
         return acc + (item.amount * price)
     }, 0)
 

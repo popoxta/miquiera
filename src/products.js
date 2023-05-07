@@ -31,7 +31,7 @@ export const products = [
     },
     {
         id: 4,
-        name: 'Eu de Candy',
+        name: 'Eau de Candy',
         description: 'Experience the sweet and floral scent of our Candy perfume! This signature fragrance features a delightful blend of fresh flowers and sweet notes, perfect for any occasion. The light and refreshing aroma is long-lasting and feminine, making you feel confident and beautiful. The charming bottle design makes it a perfect addition to your fragrance collection or a thoughtful gift. Don\'t wait, indulge in the sweet and floral scent of Candy perfume today!',
         price: 50,
         image: candyPerfume
@@ -65,3 +65,7 @@ export const products = [
         image: pepsi
     },
 ]
+
+export function productById(id) {
+    return products.find(prod => prod.id === +id)
+}

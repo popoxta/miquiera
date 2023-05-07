@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
 
 :root {
@@ -282,7 +283,8 @@ footer {
 .cart-products {
     flex-grow: 1;
     overflow-y: auto;
-    margin: 2.5rem 2.5rem 0;
+    margin: 2.5rem 0 0 2.5rem;
+    padding-right: 1rem;
 }
 
 .cart-item {

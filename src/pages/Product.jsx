@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
-import {products} from "../products.js";
-import {addToCart} from "../utils.js";
+import {productById} from "../products.js";
+import {addToCart, setValueAndReset} from "../utils.js";
 import {CartContext} from "../context.jsx";
 import {useContext, useState} from "react";
 
@@ -9,14 +9,9 @@ export default function Product() {
     const {cart, setCart} = useContext(CartContext)
     const [isAdded, setIsAdded] = useState(false)
 
-    function displayAddedText(){
-        setIsAdded(true)
-        setTimeout(()=> {
-            setIsAdded(false)
-        }, 500)
-    }
+    const displayAddedText = setValueAndReset(setIsAdded)
 
-    const product = products.find(prod => prod.id === +params.id)
+    const product = productById(params.id)
 
     return (
         <div className={'product-wrapper'}>
@@ -27,7 +22,7 @@ export default function Product() {
                 <h3>${product.price} + GST</h3>
                 <p>{product.description}</p>
 
-                <button className={'fake-btn'} onClick={() =>{
+                <button className={'fake-btn'} onClick={() => {
                     displayAddedText()
                     addToCart(cart, setCart, product)
                 }}>

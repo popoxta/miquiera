@@ -1,20 +1,19 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState} from 'react'
 
 export default function usePersistedValue(key, defaultValue){
     const [value, setValue] = useState(() => {
-        const value = window.localStorage.getItem(key);
-        return value ? (JSON.parse(value)) : defaultValue;
-    });
+        const value = window.localStorage.getItem(key)
+        return value ? (JSON.parse(value)) : defaultValue
+    })
 
     useEffect(() => {
-        window.localStorage.setItem(key, JSON.stringify(value));
-    }, [key, value]);
+        window.localStorage.setItem(key, JSON.stringify(value))
+    }, [key, value])
 
-    return [value, setValue];
+    return [value, setValue]
 }
 
 export function addToCart(cart, setCart, product, amount=1) {
-
     const index = cart.cart.findIndex(item => item.id === product.id)
 
     const productInCart = index >= 0
@@ -33,4 +32,19 @@ export function addToCart(cart, setCart, product, amount=1) {
 export function removeFromCart(cart, setCart, product) {
     const newCart = {cart: cart.cart.filter( item => item.id !== product.id )}
     setCart(newCart)
+}
+
+export function setValueAndReset(setValue) {
+    return function(){
+        setValue(true)
+        setTimeout(()=> {
+            setValue(false)
+        }, 500)
+    }
+}
+
+export function sumCartAmounts(cart) {
+    return cart.cart.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
 }

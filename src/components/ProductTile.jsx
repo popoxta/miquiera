@@ -1,16 +1,12 @@
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {setValueAndReset} from "../utils.js";
 
 
 export default function ProductTile({prod, onClick}){
     const [isAdded, setIsAdded] = useState(false)
 
-    function displayAddedText(){
-        setIsAdded(true)
-        setTimeout(()=> {
-            setIsAdded(false)
-        }, 500)
-    }
+    const displayAddedText = setValueAndReset(setIsAdded)
 
     return (
         <div className={'product-tile'}>

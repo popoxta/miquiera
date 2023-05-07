@@ -1,13 +1,12 @@
 import {Link, NavLink} from "react-router-dom";
 import {CartContext} from "../context.jsx";
 import {useContext} from "react";
+import {sumCartAmounts} from "../utils.js";
 
 export default function Header({atHome}) {
     const {setShowCart, cart} = useContext(CartContext)
 
-    const totalCartAmount = cart.cart.reduce((acc, curr) => {
-        return acc + curr.amount
-    }, 0)
+    const totalCartAmount = sumCartAmounts(cart)
 
     function showCart() {
         setShowCart(true)
