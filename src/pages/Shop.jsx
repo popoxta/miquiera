@@ -1,7 +1,11 @@
 import {products} from "../products.js";
-import {Link} from "react-router-dom";
+import {Link, useOutletContext} from "react-router-dom";
+import {addToCart} from "../utils.js";
 
 export default function Shop() {
+    const {cart, setCart} = useOutletContext()
+
+
     const allProducts = products.map(prod =>
 
         <div key={prod.id} className={'product-tile'}>
@@ -12,7 +16,13 @@ export default function Shop() {
                 <p>${prod.price} + GST</p>
             </Link>
 
-            <button className={'gr-btn'}>add to cart</button>
+            <button className={'gr-btn'}
+                    onClick={() => {
+                        addToCart(cart, setCart, prod)
+                        console.log(cart)
+                    }}>
+                add to cart
+            </button>
         </div>
     )
 
