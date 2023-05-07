@@ -4,9 +4,10 @@ import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
 import Product from "./pages/Product.jsx";
 import CartProvider from "./context.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter(createRoutesFromElements(
-    <Route path={'/'} element={<Layout/>} id={'root'}>
+    <Route path={'/'} element={<Layout/>} id={'root'} errorElement={<ErrorPage/>}>
         <Route index element={<Home/>}/>
         <Route path={'shop'}>
             <Route index element={<Shop/>}/>
