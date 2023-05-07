@@ -1,6 +1,9 @@
 import {Link, NavLink} from "react-router-dom";
+import {CartContext} from "../context.jsx";
+import {useContext} from "react";
 
-export default function Header({atHome, cart, setShowCart}) {
+export default function Header({atHome}) {
+    const {setShowCart, cart} = useContext(CartContext)
 
     const totalCartAmount = cart.cart.reduce((acc, curr) => {
         return acc + curr.amount

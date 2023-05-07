@@ -2,7 +2,6 @@ import {Link} from "react-router-dom";
 
 export default function Home() {
     return (
-
         <div className={'home-content'}>
             <div className={'home-header'}>
                 <h2>find your style</h2>
@@ -22,6 +21,5 @@ export default function Home() {
             </p>
             <Link to={'shop'}>shop now</Link>
         </div>
-
     )
 }

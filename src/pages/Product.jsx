@@ -1,10 +1,12 @@
-import {useOutletContext, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {products} from "../products.js";
 import {addToCart} from "../utils.js";
+import {CartContext} from "../context.jsx";
+import {useContext} from "react";
 
 export default function Product() {
     const params = useParams()
-    const {cart, setCart} = useOutletContext()
+    const {cart, setCart} = useContext(CartContext)
 
     const product = products.find(prod => prod.id === +params.id)
 

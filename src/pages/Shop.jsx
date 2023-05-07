@@ -1,9 +1,11 @@
 import {products} from "../products.js";
-import {Link, useOutletContext} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {addToCart} from "../utils.js";
+import {CartContext} from "../context.jsx";
+import {useContext} from "react";
 
 export default function Shop() {
-    const {cart, setCart} = useOutletContext()
+    const {cart, setCart} = useContext(CartContext)
 
     const allProducts = products.map(prod =>
 

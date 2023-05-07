@@ -1,9 +1,11 @@
 import {products} from "../products.js";
 import {addToCart, removeFromCart} from "../utils.js";
-import {useLocation} from "react-router-dom";
-import {useState} from "react";
+import {CartContext} from "../context.jsx";
+import {useContext} from "react";
 
-export default function Cart({cart, setCart, showCart, setShowCart}) {
+
+export default function Cart() {
+    const {showCart, setShowCart, cart, setCart} = useContext(CartContext)
 
     const cartProducts = cart.cart.sort((a, b) => a.id - b.id).map(item => {
 
