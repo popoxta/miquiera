@@ -13,21 +13,24 @@ export default function usePersistedValue(key, defaultValue){
     return [value, setValue];
 }
 
-export function addToCart(cart, setCart, product) {
-    const oldCart = {...cart}
+export function addToCart(cart, setCart, product, amount=1) {
 
-    const index = oldCart.cart.findIndex(item => item.id === product.id)
+    const index = cart.cart.findIndex(item => item.id === product.id)
 
     const productInCart = index >= 0
-        ? {...oldCart.cart[index], amount: oldCart.cart[index].amount + 1}
+        ? {...cart.cart[index], amount: cart.cart[index].amount + amount}
         : {id: product.id, name: product.name, amount: 1}
 
     const newCart = {
-        ...oldCart,
         cart: [
-            ...oldCart.cart.filter(item => item.id !== productInCart.id),
+            ...cart.cart.filter(item => item.id !== productInCart.id),
             productInCart
         ]
     }
+    setCart(newCart)
+}
+
+export function removeFromCart(cart, setCart, product) {
+    const newCart = {cart: cart.cart.filter( item => item.id !== product.id )}
     setCart(newCart)
 }

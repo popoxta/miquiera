@@ -5,7 +5,6 @@ import {addToCart} from "../utils.js";
 export default function Shop() {
     const {cart, setCart} = useOutletContext()
 
-
     const allProducts = products.map(prod =>
 
         <div key={prod.id} className={'product-tile'}>

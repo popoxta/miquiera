@@ -16,7 +16,7 @@ export default function Layout() {
             <div className={'content'}>
                 <Header atHome={atHome} cart={cart}/>
                 <Outlet context={{cart, setCart}}/>
-                <Cart context={{cart, setCart}}/>
+                <Cart cart={cart} setCart={setCart}/>
             </div>
             <Footer/>
         </div>

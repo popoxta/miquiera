@@ -6,6 +6,10 @@
     --gray: #DFDFDF;
 }
 
+.fix-view {
+    overflow: hidden;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -214,12 +218,12 @@ footer{
     position: absolute;
     background-color: rgba(0, 0, 0, 25%);
     top: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 
     display: flex;
     justify-content: flex-end;
-    display: none;
+    /*display: none;*/
 }
 
 .cart {
@@ -237,7 +241,24 @@ footer{
 }
 
 .cart-products {
-    padding: 2.5rem;
+    overflow-y: auto;
+    margin: 2.5rem 0 2.5rem 2.5rem;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cart-quantity {
+    display: flex;
+
+}
+
+.cart-image {
+    border-radius: 15px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .cart-summary {
