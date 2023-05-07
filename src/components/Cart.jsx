@@ -100,7 +100,7 @@ export default function Cart() {
                         <h4>${(totalCost * 1.15).toFixed(2)}</h4>
                     </div>
                     <div className={'cart-buttons'}>
-                        <button className={'gr-btn'}>continue shopping</button>
+                        <button className={'gr-btn'} onClick={hideCart}>continue shopping</button>
                         <button className={'gr-btn'}>checkout</button>
                     </div>
                 </div>

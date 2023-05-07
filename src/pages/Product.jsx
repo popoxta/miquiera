@@ -31,7 +31,7 @@ export default function Product() {
                     displayAddedText()
                     addToCart(cart, setCart, product)
                 }}>
-                    add to cart
+                    {isAdded ? 'added' : 'add to cart'}
                 </button>
             </div>
         </div>
